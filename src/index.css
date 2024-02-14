@@ -1,13 +1,77 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: lin;
+  background-color: #092635;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* styles.css */
+body {
+  background-color: #092635;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  background-color: #1b4242;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: 100%;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5c8374;
+  color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+}
+.form input::placeholder {
+  color: #ffffffb3; /* Placeholder color for #5C8374 background */
+}
+.form input[type="password"] {
+  background-color: #9ec8b9;
+}
+
+.form span {
+  color: #ffffff;
+}
+
+.form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5c8374;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #9ec8b9;
 }
