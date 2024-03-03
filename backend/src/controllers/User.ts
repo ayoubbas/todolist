@@ -77,10 +77,20 @@ export class UserController implements UserControllerInterface {
 
       const data = {
         name: user.fullName!,
-        refreshToken,
-        token,
         todos: user.todos,
       };
+
+      res.cookie('refreshToken', refreshToken, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'lax',
+        maxAge: 1000 * (60 * 60 * 24 * 30) // 1 month
+      }).cookie('token', token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'lax',
+        maxAge: 1000 * (60 * 10) // 10 minutes
+      })
 
       return this.response(res)?.successResponse(data);
     } catch (error) {

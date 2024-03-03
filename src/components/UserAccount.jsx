@@ -93,7 +93,7 @@ function ResponsiveAppBar() {
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
-                  vertical: "top",
+                  vertical: 'top',
                   horizontal: "right",
                 }}
                 keepMounted
