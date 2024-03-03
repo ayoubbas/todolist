@@ -89,7 +89,7 @@ export default function FloatingActionButtonZoom() {
     const getTodosFromLocale =
       JSON.parse(localStorage.getItem("todosArr")) ?? []; //! localeStorage
     setTodos(getTodosFromLocale);
-  }, []);
+  }, [setTodos]);
   // handleCloseOrOpen Dialoge
 
   const handleClickOpenDialoge = (id) => {
@@ -182,7 +182,7 @@ export default function FloatingActionButtonZoom() {
   // snackBar for notification
   const [state, setState] = React.useState({
     openSneack: false,
-    vertical: "buttom",
+    vertical: "bottom",
     horizontal: "left",
   });
   const { vertical, horizontal, openSneack } = state;
@@ -279,7 +279,6 @@ export default function FloatingActionButtonZoom() {
           value={value}
           onChange={handleChange}
           indicatorColor="#"
-          textColor="#"
           variant="fullWidth"
           aria-label="action tabs example"
          sx={{color:"#5C8374",'& .MuiTabs-indicator': {

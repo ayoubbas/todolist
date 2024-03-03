@@ -37,7 +37,7 @@ export default function FloatingActionButtonZoom() {
     const getTodosFromLocale =
       JSON.parse(localStorage.getItem("todosArr")) ?? []; //! localeStorage
     setTodos(getTodosFromLocale);
-  }, []);
+  }, [setTodos]);
   // handleCloseOrOpen Dialoge
   const handleClickOpenDialoge = (id) => {
     setOpenDialoge(true);

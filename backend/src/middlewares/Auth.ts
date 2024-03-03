@@ -21,7 +21,14 @@ export const verifyAuthentication = (
   }
 
   const httpResponses = new HttpResponses(res);
-  const authHeader = req.headers?.authorization;
+  let authHeader: string | null; 
+  console.log(req.cookies)
+
+  if(req.cookies.token) {
+    authHeader = req.cookies.token
+  } else {
+    authHeader = req.headers?.authorization!;
+  }
 
   if (!authHeader || authHeader.split(" ")[0] !== "Bearer") {
     return httpResponses.errorResponse(
@@ -67,7 +74,13 @@ export const authRefresh = (
   const { isRefresh, oldToken } = res.locals;
 
   if (isRefresh && oldToken.length) {
-    const refToken = req.headers["x-auth-refresh"] as string;
+    let refToken: string | null = null;
+
+    if(req.cookies.refreshToken) {
+      refToken = req.cookies.refreshToken;
+    } else {
+      refToken = req.headers["x-auth-refresh"] as string;
+    }
 
     if (!refToken) {
       return httpResponses.errorResponse(

@@ -3,7 +3,8 @@ import { Sequelize } from "sequelize";
 
 export const sequelizeConnection = new Sequelize({
   dialect: 'sqlite',
-  storage: './todos.sqlite'
+  storage: './todos.sqlite',
+  logging: false,
 })
 
 export const createDatabase = async () => {

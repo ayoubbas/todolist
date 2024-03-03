@@ -25,10 +25,13 @@ const Signin = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5500/api/v1/users/login",
-        data
+        "http://localhost:5500/api/v1/users/login",
+        data,
+        {
+          withCredentials: true
+        }
       );
-
+      console.log(response)
       // Handle successful signin
       console.log("Signin successful");
     } catch (error) {
